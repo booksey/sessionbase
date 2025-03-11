@@ -15,4 +15,11 @@ azokat a részeket, amiben van $findme (u) betű mentsd el a $tomb külön-kül�
 elég egy var_dump()
 */
 
-echo "teszt".date("Y-m-d H:i:s");
+$explodedText = explode($delim, $szoveg);
+foreach($explodedText as $string) {
+    if (preg_match("/" . $findme . "/", $string)) {
+        $tomb []= $string;
+    }
+}
+
+var_dump($tomb);
